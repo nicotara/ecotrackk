@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,7 +62,16 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+                // Custom EcoTrack colors
+                ecotrack: {
+                    light: '#8BC34A',
+                    DEFAULT: '#4CAF50',
+                    dark: '#2E7D32',
+                    text: '#1B5E20',
+                    accent: '#F1F8E9',
+                    secondary: '#FF9800'
+                },
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -84,12 +94,30 @@ export default {
 					to: {
 						height: '0'
 					}
-				}
+				},
+                'fade-in': {
+                    from: { opacity: '0' },
+                    to: { opacity: '1' }
+                },
+                'slide-up': {
+                    from: { transform: 'translateY(10px)', opacity: '0' },
+                    to: { transform: 'translateY(0)', opacity: '1' }
+                }
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
-			}
+				'accordion-up': 'accordion-up 0.2s ease-out',
+                'fade-in': 'fade-in 1s ease-out',
+                'slide-up': 'slide-up 0.5s ease-out'
+			},
+            backgroundImage: {
+                'hero-pattern': "url('/public/lovable-uploads/b69d67c8-9287-458a-b7ad-20432d472aa1.png')",
+                'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+            },
+            fontFamily: {
+                sans: ['Inter', 'system-ui', 'sans-serif'],
+                display: ['Montserrat', 'system-ui', 'sans-serif'],
+            }
 		}
 	},
 	plugins: [require("tailwindcss-animate")],
