@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Menu, X } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -26,7 +27,9 @@ const Navbar = () => {
             <li><a href="#impact" className="text-gray-700 hover:text-ecotrack transition-colors">Impatto</a></li>
             <li><a href="#about" className="text-gray-700 hover:text-ecotrack transition-colors">Chi Siamo</a></li>
           </ul>
-          <Button className="bg-ecotrack hover:bg-ecotrack-dark text-white">Scarica l'App</Button>
+          <Link to="/download">
+            <Button className="bg-ecotrack hover:bg-ecotrack-dark text-white">Scarica l'App</Button>
+          </Link>
         </div>
 
         {/* Mobile menu button */}
@@ -48,7 +51,9 @@ const Navbar = () => {
             <li><a href="#impact" className="text-gray-700 hover:text-ecotrack transition-colors" onClick={() => setIsMenuOpen(false)}>Impatto</a></li>
             <li><a href="#about" className="text-gray-700 hover:text-ecotrack transition-colors" onClick={() => setIsMenuOpen(false)}>Chi Siamo</a></li>
           </ul>
-          <Button className="w-full bg-ecotrack hover:bg-ecotrack-dark text-white">Scarica l'App</Button>
+          <Link to="/download" onClick={() => setIsMenuOpen(false)}>
+            <Button className="w-full bg-ecotrack hover:bg-ecotrack-dark text-white">Scarica l'App</Button>
+          </Link>
         </div>
       )}
     </nav>

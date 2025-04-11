@@ -2,6 +2,7 @@
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { AppleIcon, Smartphone } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const CTA = () => {
   return (
@@ -23,18 +24,22 @@ const CTA = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row justify-center gap-4 mb-8">
-            <Button className="bg-white text-ecotrack-dark hover:bg-gray-100 gap-2 text-lg font-medium px-6 py-6">
-              <AppleIcon size={24} />
-              <span>App Store</span>
-            </Button>
-            <Button className="bg-white text-ecotrack-dark hover:bg-gray-100 gap-2 text-lg font-medium px-6 py-6">
-              <Smartphone size={24} />
-              <span>Google Play</span>
-            </Button>
+            <Link to="/download">
+              <Button className="bg-white text-ecotrack-dark hover:bg-gray-100 gap-2 text-lg font-medium px-6 py-6">
+                <AppleIcon size={24} />
+                <span>App Store</span>
+              </Button>
+            </Link>
+            <Link to="/download">
+              <Button className="bg-white text-ecotrack-dark hover:bg-gray-100 gap-2 text-lg font-medium px-6 py-6">
+                <Smartphone size={24} />
+                <span>Google Play</span>
+              </Button>
+            </Link>
           </div>
           
           <p className="text-sm opacity-75">
-            Disponibile per iOS e Android. Unisciti agli oltre 15.000 eco-guardiani che stanno già facendo la differenza.
+            Presto disponibile per iOS e Android. Unisciti ai primi eco-guardiani che faranno la differenza.
           </p>
         </div>
       </div>

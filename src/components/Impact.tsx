@@ -2,13 +2,6 @@
 import React from 'react';
 import { Shield, BarChart2, FileText } from 'lucide-react';
 
-const stats = [
-  { number: "2,500+", label: "Aree naturali monitorate" },
-  { number: "15,000+", label: "Utenti attivi" },
-  { number: "8,700+", label: "Segnalazioni risolte" },
-  { number: "240+", label: "Specie documentate" }
-];
-
 const impactAreas = [
   {
     icon: <Shield className="h-12 w-12 text-ecotrack mb-4" />,
@@ -33,22 +26,21 @@ const Impact = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-display font-bold">
-            Il Nostro Impatto
+            Il Nostro Impatto Potenziale
           </h2>
           <div className="divider bg-white/30"></div>
           <p className="text-lg max-w-3xl mx-auto opacity-90">
-            Insieme stiamo facendo la differenza per proteggere le aree naturali e preservare la biodiversità per le generazioni future.
+            EcoTrack è un'applicazione nuova che mira a fare la differenza nella protezione delle aree naturali e nella conservazione della biodiversità.
           </p>
         </div>
         
-        {/* Stats row */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
-          {stats.map((stat, index) => (
-            <div key={index} className="text-center p-6 bg-white/10 backdrop-blur-sm rounded-lg">
-              <div className="text-3xl md:text-4xl font-bold mb-2">{stat.number}</div>
-              <div className="text-sm md:text-base opacity-90">{stat.label}</div>
-            </div>
-          ))}
+        {/* Message about being a new app */}
+        <div className="bg-white/10 backdrop-blur-sm rounded-lg p-8 mb-16 text-center">
+          <p className="text-lg">
+            Essendo EcoTrack un'applicazione appena lanciata, non abbiamo ancora dati statistici da condividere. 
+            Il nostro obiettivo è costruire una comunità di persone impegnate nella protezione ambientale che, 
+            insieme, potranno generare un impatto positivo misurabile nel tempo.
+          </p>
         </div>
         
         {/* Impact areas */}

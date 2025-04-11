@@ -2,6 +2,7 @@
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
   const scrollToFeatures = () => {
@@ -31,10 +32,14 @@ const Hero = () => {
             Segnala problemi, documenta la biodiversità e unisciti a una comunità che si impegna per salvaguardare il nostro pianeta.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button className="bg-ecotrack-secondary hover:bg-amber-600 text-white font-medium text-lg px-8 py-6">
-              Scarica l'App
-            </Button>
-            <Button variant="outline" className="bg-white/10 backdrop-blur-sm hover:bg-white/20 border-white/40 text-white font-medium text-lg px-8 py-6">
+            <Link to="/download">
+              <Button className="bg-ecotrack-secondary hover:bg-amber-600 text-white font-medium text-lg px-8 py-6">
+                Scarica l'App
+              </Button>
+            </Link>
+            <Button variant="outline" 
+                    className="bg-white/10 backdrop-blur-sm hover:bg-white/20 border-white/40 text-white font-medium text-lg px-8 py-6"
+                    onClick={scrollToFeatures}>
               Scopri di Più
             </Button>
           </div>
