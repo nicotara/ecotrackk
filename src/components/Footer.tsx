@@ -1,8 +1,20 @@
 
 import React from 'react';
-import { Facebook, Instagram, Twitter, Linkedin, Mail, Phone } from 'lucide-react';
+import { Mail } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+import { toast } from "@/hooks/use-toast";
 
 const Footer = () => {
+  const navigate = useNavigate();
+  
+  const handleSubscribe = (e: React.FormEvent) => {
+    e.preventDefault();
+    toast({
+      title: "Work in Progress",
+      description: "La funzionalità di newsletter è in fase di sviluppo.",
+    });
+  };
+
   return (
     <footer id="about" className="bg-gray-900 text-white pt-16 pb-8">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -20,20 +32,6 @@ const Footer = () => {
             <p className="text-gray-400 mb-4">
               Un'applicazione dedicata al monitoraggio e alla protezione delle aree naturali attraverso la partecipazione attiva dei cittadini.
             </p>
-            <div className="flex gap-4">
-              <a href="#" className="text-gray-400 hover:text-ecotrack" aria-label="Facebook">
-                <Facebook size={20} />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-ecotrack" aria-label="Instagram">
-                <Instagram size={20} />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-ecotrack" aria-label="Twitter">
-                <Twitter size={20} />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-ecotrack" aria-label="LinkedIn">
-                <Linkedin size={20} />
-              </a>
-            </div>
           </div>
           
           {/* Column 2: Quick Links */}
@@ -43,8 +41,6 @@ const Footer = () => {
               <li><a href="#features" className="text-gray-400 hover:text-ecotrack transition-colors">Funzionalità</a></li>
               <li><a href="#how-it-works" className="text-gray-400 hover:text-ecotrack transition-colors">Come Funziona</a></li>
               <li><a href="#impact" className="text-gray-400 hover:text-ecotrack transition-colors">Impatto</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-ecotrack transition-colors">Privacy Policy</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-ecotrack transition-colors">Termini di Servizio</a></li>
             </ul>
           </div>
           
@@ -56,10 +52,6 @@ const Footer = () => {
                 <Mail size={16} />
                 <span>info@ecotrack.it</span>
               </li>
-              <li className="flex items-center gap-2 text-gray-400">
-                <Phone size={16} />
-                <span>+39 06 1234567</span>
-              </li>
             </ul>
           </div>
           
@@ -69,7 +61,7 @@ const Footer = () => {
             <p className="text-gray-400 mb-4">
               Ricevi aggiornamenti sulle nuove funzionalità e sulle iniziative ambientali nella tua zona.
             </p>
-            <form className="flex flex-col gap-2">
+            <form className="flex flex-col gap-2" onSubmit={handleSubscribe}>
               <input
                 type="email"
                 placeholder="Il tuo indirizzo email"
